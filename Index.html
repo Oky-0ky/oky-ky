@@ -98,18 +98,6 @@
       text-shadow: 0 0 8px rgba(255,182,193,0.18);
     }
 
-    /* Typing caret */
-    .caret {
-      display: inline-block;
-      margin-left: 6px;
-      color: #ff69b4;
-      font-weight: 700;
-      animation: blink 1s steps(1) infinite;
-    }
-    .small-caret { transform: scale(0.8); margin-left: 4px; }
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
 
     /* Mobile responsive tweaks */
     @media (max-width: 600px) {
@@ -130,12 +118,11 @@
   <div id="hearts" aria-hidden="true"></div>
 
   <div class="container">
-    <h1><span id="typed-text" aria-live="polite" aria-atomic="true"></span><span class="caret" aria-hidden="true">|</span></h1>
-    <p>Semoga harinya besok tetap semangat dan bahagia sayangku <span class="heart">❤️</span></p>
-    <p>Mimpi indahlah ya, aku selalu ada di setiap doaku untukmu.</p>
-    <p>Tidur yang nyenyak, cintaku...</p>
+    <h1><span id="typed-text" aria-live="polite" aria-atomic="true"></span></h1>
+    <p><span id="typed-p1" aria-live="polite" aria-atomic="true"></span> <span class="heart">❤️</span></p>
+    <p><span id="typed-p2" aria-live="polite" aria-atomic="true"></span></p>
+    <p><span id="typed-p3" aria-live="polite" aria-atomic="true"></span></p>
   </div>
-  <p class="dedication"><span id="typed-dedication" aria-live="polite" aria-atomic="true"></span><span class="caret small-caret" aria-hidden="true">|</span></p>
 
   <!-- Musik romantis autoplay (Love Spell - royalty free dari Fesliyan Studios) -->
   <audio id="bgm" loop volume="0.3" autoplay muted>
@@ -232,10 +219,27 @@
       typeText(typedEl, fullText, 50, 120, () => {
         // after heading typed, set aria-label for screenreaders and start dedication
         typedEl.setAttribute('aria-label', fullText);
-        const dedEl = document.getElementById('typed-dedication');
+        // Start typing paragraphs after a short delay
+        const p1 = document.getElementById('typed-p1');
+        const p2 = document.getElementById('typed-p2');
+        const p3 = document.getElementById('typed-p3');
+        const p1Text = 'Semoga harinya besok tetap semangat dan bahagia sayangku';
+        const p2Text = 'Mimpi indah ya, aku selalu ada di setiap doaku untukmu.';
+        const p3Text = 'Tidur yang nyenyak, cintaku...';
+
         setTimeout(() => {
-          typeText(dedEl, dedText, 60, 140, () => {
-            dedEl.setAttribute('aria-label', dedText);
+          typeText(p1, p1Text, 30, 90, () => {
+            p1.setAttribute('aria-label', p1Text);
+            setTimeout(() => {
+              typeText(p2, p2Text, 30, 90, () => {
+                p2.setAttribute('aria-label', p2Text);
+                setTimeout(() => {
+                  typeText(p3, p3Text, 30, 90, () => {
+                    p3.setAttribute('aria-label', p3Text);
+                  });
+                }, 300);
+              });
+            }, 250);
           });
         }, 500);
       });
