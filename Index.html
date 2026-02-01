@@ -1,91 +1,247 @@
 <!DOCTYPE html>
 <html lang="id">
-<meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Sono:wght@600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
-
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script><link href="https://feeldreams.github.io/dibacadong/style.css" rel="stylesheet" type="text/css" />
-  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
-  
 <head>
-<title>Nabila❤️</title>
-<link rel="icon" type="image/x-icon" href="https://malasid.github.io/favicon.png">
-<meta name="description" content="HTML Bucin Malas.id">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selamat Tidur, Sayangku 💕🌙</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+      max-width: 90%;
+      animation: fadeIn 3s ease-in-out;
+    }
+    h1 {
+      font-size: 3.5em;
+      margin: 0;
+      color: #ff69b4;
+      text-shadow: 0 0 15px #ff69b4;
+    }
+    p {
+      font-size: 1.6em;
+      margin: 20px 0;
+      line-height: 1.5;
+    }
+    .heart {
+      color: #ff69b4;
+      font-size: 1.8em;
+      animation: beat 1.5s infinite;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    .stars {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+    }
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 5s infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
 
+    /* Floating heart styles */
+    #hearts { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; overflow: hidden; }
+    .floating-heart {
+      position: absolute;
+      pointer-events: none;
+      font-size: 2rem;
+      transform: translate(-50%, -50%) scale(0.9);
+      animation: floatUp 1500ms ease-out forwards, pop 600ms ease;
+      opacity: 0;
+      will-change: transform, opacity;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    }
+    @keyframes floatUp {
+      0% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+      100% { opacity: 0; transform: translate(-50%, -120px) scale(1.1); }
+    }
+    @keyframes pop {
+      0% { transform: translate(-50%, -50%) scale(0.8); }
+      50% { transform: translate(-50%, -50%) scale(1.25); }
+      100% { transform: translate(-50%, -50%) scale(1); }
+    }
+
+    .dedication {
+      margin-top: 14px;
+      text-align: center;
+      color: #ffb6c1;
+      font-size: 0.95rem;
+      font-style: italic;
+      text-shadow: 0 0 8px rgba(255,182,193,0.18);
+    }
+
+    /* Typing caret */
+    .caret {
+      display: inline-block;
+      margin-left: 6px;
+      color: #ff69b4;
+      font-weight: 700;
+      animation: blink 1s steps(1) infinite;
+    }
+    .small-caret { transform: scale(0.8); margin-left: 4px; }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* Mobile responsive tweaks */
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      p { font-size: 1rem; }
+      .container { padding: 18px; border-radius: 14px; max-width: 95%; }
+      .heart { font-size: 1.4em; }
+    }
+    @media (max-width: 360px) {
+      h1 { font-size: 1.6rem; }
+      p { font-size: 0.95rem; }
+    }
+  </style>
 </head>
 <body>
-	
-   <!-- Ganti Audio di sini -->
-   <audio src="song (6).mp3" id="linkmp3" class="sembunyi"></audio>
-   
-   <div id="bodyblur">
-     <!-- Wallpaper --><img src="https://i.pinimg.com/736x/be/89/b5/be89b5533259411e9dee42b31a3c1e8e.jpg" id="wallpaper"/>
-   </div>
-   
-   <div id='Content'>
 
-     <div id="ftAwal">
-       <!-- Stiker Pembuka -->
-       <img src="https://feeldreams.github.io/pandaputih.gif" id="ftoAwal"/>
-     </div>
+  <div class="stars" id="stars"></div>
+  <div id="hearts" aria-hidden="true"></div>
 
-     <div id="loveIn">
-       <!-- Tombol LOVE --><label class='lovein'>&#10084;</label>
-     </div>
-     <p id="ket">Sentuh LOVEnya!</p>
+  <div class="container">
+    <h1><span id="typed-text" aria-live="polite" aria-atomic="true"></span><span class="caret" aria-hidden="true">|</span></h1>
+    <p>Semoga harinya besok tetap semangat dan bahagia sayangku <span class="heart">❤️</span></p>
+    <p>Mimpi indahlah ya, aku selalu ada di setiap doaku untukmu.</p>
+    <p>Tidur yang nyenyak, cintaku...</p>
+  </div>
+  <p class="dedication"><span id="typed-dedication" aria-live="polite" aria-atomic="true"></span><span class="caret small-caret" aria-hidden="true">|</span></p>
 
-     <div class="kumpulanstiker">
-         <!-- Stiker untuk Konten -->
-         <img src="https://feeldreams.github.io/bwa2.gif" id="fotostiker"/>
-         <img src="https://feeldreams.github.io/wortel.gif" id="fotostiker1"/>
-         <img src="https://feeldreams.github.io/ngumpet.gif" id="fotostiker2"/>
-         <img src="https://feeldreams.github.io/pusn.gif" id="fotostiker3"/>
-     </div>
-     
-     <div class="kumpulanwp" class="sembunyi">
-     	<img src="https://i.pinimg.com/736x/58/27/12/582712302f423ea8562f2ea7b3f769cc.jpg" id="wallpaper2"/>
-         <img src="https://i.pinimg.com/736x/d3/15/f0/d315f0d0d65e2dfff76a32aec4881fc9.jpg" id="wallpaper3"/>
-         <img src="https://i.pinimg.com/1200x/4e/ca/2e/4eca2e6c4090bd32a50123110589183f.jpg" id="wallpaper4"/>
-     </div>
-     
-     <div><div id='pergeseran'>
-     	
-        <p><b>
-	        <span>hii ayaangggg🤣</span>
-        </b></p>
-        
-        <p><b>
-	        <span>maaf yaa kalo aku<br>suka bkin kamu kesel ya sayang</span>
-        </b></p>
+  <!-- Musik romantis autoplay (Love Spell - royalty free dari Fesliyan Studios) -->
+  <audio id="bgm" loop volume="0.3" autoplay muted>
+    <source src="na.mp3" type="audio/mpeg">
+    Browser kamu tidak support audio. Coba Chrome ya sayang.
+  </audio>
 
-        <p><b>
-	        <span>aku cuma mau bilang sama Nabila❤️</span>
-        </b></p>
-        
-        <p><b>
-	        <span>pncet ini dlu ya 👉💌</span>
-        </b></p>
-        
-     </div></div>
+  <!-- Script untuk unmute setelah load (biar autoplay lebih mungkin jalan) + bintang -->
+  <script>
+    const audio = document.getElementById('bgm');
+    
+    // Coba unmute setelah halaman load
+    window.addEventListener('load', () => {
+      audio.muted = false;
+      audio.play().catch(() => {
+        // Kalau gagal autoplay, tunggu interaksi user (klik mana saja)
+        document.body.addEventListener('click', () => {
+          audio.muted = false;
+          audio.play();
+        }, { once: true });
+      });
+    });
 
-     <p id="ketgeser">Klik untuk Geser!</p>
+    // Efek bintang jatuh
+    function createStar() {
+      const star = document.createElement('div');
+      star.className = 'star';
+      const size = Math.random() * 3 + 1;
+      star.style.width = size + 'px';
+      star.style.height = size + 'px';
+      star.style.left = Math.random() * 100 + 'vw';
+      star.style.top = Math.random() * 100 + 'vh';
+      star.style.animationDuration = Math.random() * 3 + 3 + 's';
+      document.getElementById('stars').appendChild(star);
+      setTimeout(() => star.remove(), 8000);
+    }
+    
+    setInterval(createStar, 300);
 
-     <div><blockquote id='bq'>
-       <p id="kalimat">Maaf ya sayang, aku belum bisa jadi yang terbaik buat Nabila❤️. Tapi percaya deh, aku selalu pengen jadi alasan Nabila❤️ bahagia 😘❤️<br><br>Aku belum bisa jadi yang terbaik, belum sepenuhnya ngerti Nabilanya… tapi aku cuma mau Nabila❤️ tahu, aku sayang sama Nabila❤️ dengn berharap ridha Allah,<br><br>Hehe aku sering minta ini itu sama Nabila ya 😅. Tapi plis, kirim satu foto aja ya sayang… 🤭💕,<br><br>Pergi ke pasar beli rambutan,
-manis rasanya bikin ketagihan.
-Sayang kirim foto jangan pelitan,
-biar aku bisa makin sayang kebangetan 😘</p>
-       <p id="pesanAkhir">اِبْقَ مَعِي، إِنِّي أُحِبُّكِ<br>stay with me. i love uu 🤍</p>
-     </blockquote></div>
-     
-   </div>
+    // Animasi hati muncul (otomatis saat load & saat user mengetuk/klik)
+    const heartsContainer = document.getElementById('hearts');
 
-<script>const body = document.querySelector("body"); const iniwp = [];iden = 1; iniwp[1] = wallpaper.src; iniwp[2] = wallpaper2.src; iniwp[3] = wallpaper3.src; iniwp[4] = wallpaper4.src; katakata = kalimat.innerHTML;pesanAkhir2 = pesanAkhir.innerHTML;kalimat.innerHTML = "";pesanAkhir.innerHTML=""; const swalst = Swal.mixin({timer: 2500, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 90,}); audio = new Audio('' + linkmp3.src); ftganti=0;fungsi=0;fungsiAwal=0;deffotostiker=fotostiker.src;function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);Content.style = "opacity:1;margin-top:14vh"; const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageHeight: 80,}); </script>
-<script src="https://malasid.github.io/html/bikinkesal.js"></script>
+    function createFloatingHeart(x = null, y = null) {
+      const heart = document.createElement('div');
+      heart.className = 'floating-heart';
+      heart.innerText = '❤️';
+
+      const left = (x !== null) ? x + 'px' : (window.innerWidth / 2) + 'px';
+      const top = (y !== null) ? y + 'px' : (window.innerHeight * 0.65) + 'px';
+      heart.style.left = left;
+      heart.style.top = top;
+
+      heartsContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 1800);
+    }
+
+    // Buat beberapa hati saat halaman dibuka
+    window.addEventListener('load', () => {
+      for (let i = 0; i < 6; i++) {
+        setTimeout(() => {
+          const x = window.innerWidth * (0.3 + Math.random() * 0.4);
+          const y = window.innerHeight * (0.55 + Math.random() * 0.15);
+          createFloatingHeart(x, y);
+        }, i * 250);
+      }
+    });
+
+    // Buat hati saat pengguna mengetuk / mengklik layar (berguna di hp)
+    document.addEventListener('click', (e) => {
+      createFloatingHeart(e.clientX, e.clientY);
+    });
+
+    // Typing animation (ketik) untuk judul dan dedikasi
+    function typeText(el, text, minDelay = 40, maxDelay = 120, callback) {
+      el.textContent = '';
+      let i = 0;
+      function tick() {
+        if (i <= text.length - 1) {
+          el.textContent += text.charAt(i);
+          i++;
+          const delay = Math.random() * (maxDelay - minDelay) + minDelay;
+          setTimeout(tick, delay);
+        } else {
+          if (typeof callback === 'function') callback();
+        }
+      }
+      tick();
+    }
+
+    window.addEventListener('load', () => {
+      const typedEl = document.getElementById('typed-text');
+      const fullText = 'Selamat Tidur, Sayangku 💤🌙';
+      // start typing heading
+      typeText(typedEl, fullText, 50, 120, () => {
+        // after heading typed, set aria-label for screenreaders and start dedication
+        typedEl.setAttribute('aria-label', fullText);
+        const dedEl = document.getElementById('typed-dedication');
+        setTimeout(() => {
+          typeText(dedEl, dedText, 60, 140, () => {
+            dedEl.setAttribute('aria-label', dedText);
+          });
+        }, 500);
+      });
+    });
+
+  </script>
+
 </body>
 </html>
